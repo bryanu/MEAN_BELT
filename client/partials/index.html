@@ -1,0 +1,41 @@
+<div class="container2" ng-controller='aptController as aC'>
+
+  <div class="row header1">
+    <div class="col-md-6"><h2>Doctor's Appointment</h2></div>
+    <div class="col-md-6 userinfo">
+      <span>Welcome, {{ aC.user_name }}! &nbsp;&nbsp;
+        <a class="btn btn-primary btn-xs" ng-click="aC.logout()">Logout</a>
+      </span>
+    </div>
+  </div>
+  <br />
+  <div class="search">Search:
+    <input type="text" name="search" ng-model='filter_name'>
+  </div>
+  <br />
+  <table class="table table-hover">
+    <thead>
+      <tr>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Patient Name</th>
+      <th>Complain</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="apts in aC.appointments | orderBy : 'createdAt' | filter: filter_name">
+        <td>{{apts.date | date: 'EEEE MMMM d, yyyy'}}</td>
+        <td>{{apts.time | date: 'h:mma'}}</td>
+        <td>{{apts.userName}}</td>
+        <td>{{apts.complaint}}
+            <!-- <button ng-click="aC.delete(apts)" ng-show="apts.userID == apts.user_id" type="button" name="button">Cancel</button> -->
+            <button ng-click="aC.delete(apts)" ng-show="aC.checkStatus(apts.userID, apts.user_id, apts.date)" type="button" name="button">Cancel</button>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <a href="#!/appointment" class="btn btn-primary btn-xs">Add New Appointment</a>
+
+</div>

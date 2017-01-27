@@ -1,0 +1,49 @@
+<div class="container2" ng-controller='aptController as aC'>
+
+  <div class="row header1">
+    <div class="col-md-6"><h2>Doctor's Appointment</h2></div>
+    <div class="col-md-6 userinfo">
+      <span>Welcome, {{ aC.user_name }}! &nbsp;&nbsp;
+        <a class="btn btn-primary btn-xs" ng-click="aC.logout()">Logout</a>
+      </span>
+    </div>
+  </div>
+  <br />
+  <h1>New Appointment</h1>
+
+  <div class="row">
+    <div class=".col-md-6">
+      <form ng-submit="aC.newAppointment()" class="form-horizontal">
+
+        <div class="form-group">
+          <label class="col-sm-4 control-label">Date:</label>
+          <div class="col-sm-8">
+            <input type="date" class="form-control" ng-model="aC.newApt.date">
+            <span class="errormsg" ng-bind="aC.aptErrors.date"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-4 control-label">Time:</label>
+          <div class="col-sm-8">
+            <input type="time" class="form-control" ng-model="aC.newApt.time">
+            <span class="errormsg" ng-bind="aC.aptErrors.time"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-4 control-label">Complaint:</label>
+          <div class="col-sm-8">
+            <textarea class="taMessage" ng-model="aC.newApt.complaint" rows="4" pattern=".{10,}" title="10 characters minimum for messages." required placeholder="Please enter a message (10 characters minimum)"></textarea>
+            <span class="errormsg" ng-bind="aC.aptErrors.complaint"></span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-success submitBtn">Add Appointment</button>
+
+      </form>
+    </div>
+
+  <a href="#!/" class="btn btn-primary btn-xs">Cancel</a>
+
+</div>

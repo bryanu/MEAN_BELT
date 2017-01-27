@@ -47,11 +47,7 @@ function UsersController() {
 			} else if (user[0]) {
 				user = user[0];
 				user.comparePassword(req.body.password, user.password, function(ret) {
-					console.log("**************************");
-					console.log("ret = ", ret);
-					console.log("**************************");
 					if (ret == true) {
-						console.log("******MADE IT********************");
 						returnedUser = {
 							id: 				user._id,
 							first_name: user.first_name,
@@ -66,8 +62,7 @@ function UsersController() {
 					}
 				})
 			} else {
-				res.json({
-					errors: {	Register: {	message: 'That user does not to exist.'	}	}
+				res.json({ errors: {	Register: {	message: 'That user does not to exist.'	}	}
 				})
 			}
 		})

@@ -25,7 +25,7 @@ app.controller('loginController', function(userFactory, $location, $cookies){
 				//console.log('registered passed:', data)
 				data.id = data.user_id;
 				saveCookies(data)
-				$location.url('/wall');
+				$location.url('/index');
 			} else {
 				var errors = data.errors;
 				for (key in errors){
@@ -41,7 +41,7 @@ app.controller('loginController', function(userFactory, $location, $cookies){
 				console.log('loginController.login (data):', data)
 				if (data.email){
 					saveCookies(data)
-					$location.url('/wall');
+					$location.url('/index');
 				} else {
 					self.loginErrors.push(data.errors.Register.message);
 				}
