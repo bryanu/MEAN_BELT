@@ -20,17 +20,17 @@
       <th>Time</th>
       <th>Patient Name</th>
       <th>Complain</th>
+      <th></th>
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="apts in aC.appointments | orderBy : 'createdAt' | filter: filter_name">
+      <tr ng-repeat="apts in aC.appointments | orderBy : 'date' | filter: filter_name">
         <td>{{apts.date | date: 'EEEE MMMM d, yyyy'}}</td>
         <td>{{apts.time | date: 'h:mma'}}</td>
         <td>{{apts.userName}}</td>
-        <td>{{apts.complaint}}
-            <!-- <button ng-click="aC.delete(apts)" ng-show="apts.userID == apts.user_id" type="button" name="button">Cancel</button> -->
-            <button ng-click="aC.delete(apts)" ng-show="aC.checkStatus(apts.userID, apts.user_id, apts.date)" type="button" name="button">Cancel</button>
-
+        <td>{{apts.complaint}}</td>
+        <td>
+          <button ng-click="aC.delete(apts)" ng-show="aC.checkStatus(apts._userID, apts.date)" type="button" name="button">Cancel</button>
         </td>
       </tr>
     </tbody>

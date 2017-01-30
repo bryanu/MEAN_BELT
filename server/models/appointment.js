@@ -26,4 +26,16 @@ var AppointmentSchema = new mongoose.Schema({
 
 }, {timestamps: true});
 
+// AppointmentSchema.methods.getApptsOnDate = function(onDate, callback){
+// 	appt.find({'date' : onDate }, function(err, appt) {
+// 		if (appt == null) {
+// 			console.log("***** GOT 0  *****")
+// 			return callback(0);
+// 		} else {
+// 			console.log("***** GOT", appt.length)
+// 			return callback(appt.length);
+// 		}
+// 	})
+// }
+
 mongoose.model('Appointment', AppointmentSchema);

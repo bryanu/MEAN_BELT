@@ -13,7 +13,7 @@ h4 {
   font-weight: bold;
 }
 .container2 {
-  width: 600px;
+  width: 800px;
   margin: 0 auto;
 }
 .userinfo {
@@ -66,4 +66,9 @@ h4 {
 #login legend {
   font-weight: bold;
   color: grey;
+}
+
+.errormsg {
+  font-weight: bold;
+  color: red;
 }

@@ -6,11 +6,11 @@ app.controller('aptController', function(aptFactory, $location, $cookies){
 	self.user_id 	 = '';
 	self.user_name = '';
 
-
-	self.checkStatus = function(userID, user_id, aptDate) {
+	self.checkStatus = function(userID, aptDate) {
+		console.log(userID,  aptDate)
 		var date = new Date();
 		aptDate = new Date(aptDate);
-		if (userID == user_id && date < aptDate) {
+		if (userID == self.user_id && date < aptDate) {
 			return true;
 		} else {
 			return false
@@ -42,14 +42,16 @@ app.controller('aptController', function(aptFactory, $location, $cookies){
 			userID:	  	self.user_id
 		};
 		aptFactory.postAppointment(nApt).then( function(data) {
-			console.log("PostApp:", data)
 			if (data.data.apt_id) {
 				console.log("returned from Post",data)
 				$location.url('/index');
 			} else {
-				var errors = data.data.errors;
-				for (key in errors){
-					self.aptErrors[key] = errors[key].message
+				console.log("PostApp:", data.data)
+				var errorsv = data.data;
+				for (key in errorsv){
+					console.log(errorsv[key].errors.kind,  errorsv[key].errors.message);
+					self.aptErrors[errorsv[key].errors.kind] = errorsv[key].errors.message
+
 				}
 			}
 		})

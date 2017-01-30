@@ -27,6 +27,7 @@ app.controller('loginController', function(userFactory, $location, $cookies){
 				saveCookies(data)
 				$location.url('/index');
 			} else {
+				console.log("Reg errors:", data.errors)
 				var errors = data.errors;
 				for (key in errors){
 					self.registerErrors[key] = errors[key].message
