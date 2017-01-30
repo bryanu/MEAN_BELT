@@ -3,7 +3,7 @@ var mongoose 		= require('mongoose'),
 		path 				= require('path'),
 		models_path = path.join(__dirname, './../models'),
 		reg 				= new RegExp('.js$', 'i'),
-		dbURI 			= 'mongodb://localhost/appointments';
+		dbURI 			= 'mongodb://localhost/bucketlist';
 
 mongoose.connect(dbURI);
 

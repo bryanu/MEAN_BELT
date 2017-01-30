@@ -15,5 +15,5 @@ require(path.join(root, 'server/config/mongoose.js'));
 require(path.join(root, 'server/config/routes.js'))(app);
 
 app.listen(port, function(){
-	console.log('server running on port ' + port);
+	console.log('Server running on port ' + port);
 })

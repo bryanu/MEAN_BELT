@@ -1,11 +1,12 @@
 {
-  "name": "angular_friends",
-  "description": "",
+  "name": "mean_exam",
+  "description": "Bucket List",
   "main": "server.js",
-  "authors": [],
+  "authors": [
+    "Bryan Utley"
+  ],
   "license": "ISC",
   "homepage": "",
-  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
@@ -16,6 +17,6 @@
   "dependencies": {
     "angular": "^1.5.8",
     "angular-route": "^1.5.8",
-    "angular-cookies": "^1.6.1"
+    "angular-cookies": "^1.5.8"
   }
 }

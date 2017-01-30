@@ -1,0 +1,29 @@
+<div class="container2">
+
+	<div class="title">
+		<div class="row">
+			<h3 class="col-xs-6 col-sm-4">Bucket Lists</h3>
+			<h5 class="col-xs-6 col-sm-4" style="text-align: right;"><a href="#/dashboard">Home</a><br><a ng-click="logout()">Log out</a></h5>
+		</div>
+	</div>
+
+	<br>
+	<h2><div><span class="user">{{name}}'s'</span> Bucket List</div></h2><br>
+
+	<h4>Done</h4>
+	<div class="checkbox itemlist" ng-repeat="item in itemsDone">
+		<label>
+			<input type="checkbox" checked disabled>
+			{{item.name}} | {{item.title}} - {{item.description}} - {{item.createdAt | date:"MMM dd yyyy"}}
+		</label>
+	</div>
+
+	<h4>Pending</h4>
+	<div class="checkbox itemlist" ng-repeat="item in itemsNotDone">
+		<label>
+			<input type="checkbox" disabled>
+			{{item.name}} | {{item.title}} - {{item.description}} - {{item.createdAt | date:"MMM dd yyyy"}}
+		</label>
+	</div>
+
+</div>

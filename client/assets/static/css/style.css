@@ -1,74 +1,40 @@
-h3 {
-  font-weight: bold;
-  margin: 10px 0 2px 0;
-}
-h4 {
-  font-weight: bold;
-  margin: 15px 0 0 0;
-}
-.header1 h2 {
-  margin: 10px;
-  text-shadow: 2px 2px 2px black;
-  color: red;
-  font-weight: bold;
+.container1, .container2 {
+  width: 300px;
+  margin: 0 auto;
 }
 .container2 {
-  width: 800px;
-  margin: 0 auto;
+  width: 700px;
 }
-.userinfo {
-  text-align: right;
-  margin-top: 19px;
-}
-.header1 {
-  border-bottom: 1px solid black;
-}
-.taMessage {
-  width: 100%;
-}
-.taComment {
-  width: 100%;
-}
-.postMessageBtn {
-  float: right;
-}
-.message {
-  margin: 10px 0 15px 10px;
-}
-.comment {
-  margin: 10px 0 10px 10px;
-}
-.userNameDate {
-  font-size: .8em;
-}
-.commentText {
-  font-size: .9em;
-  font-weight: bold;
-}
-.container {
-  width: 475px;
-  margin: 0 auto;
-}
-.submitBtn {
-  float: right;
-}
-#login h1 {
-  margin: 0;
-  font-weight: bold;
-  text-align: center;
-  color: red;
+.container1 h1{
   text-shadow: 2px 2px 2px black;
-}
-#login h5 {
-  margin-bottom: 30px;
-  text-align: center;
-}
-#login legend {
-  font-weight: bold;
-  color: grey;
-}
-
-.errormsg {
-  font-weight: bold;
   color: red;
+}
+#username {
+  margin-bottom: 10px;
+}
+.form-group {
+  padding-top: 120px;
+}
+.right {
+  float: right;
+  margin-right: 5px;
+}
+.logout {
+  margin-top: 10px;
+}
+.red {
+  color: red;
+}
+.user {
+  font-weight: bold;
+}
+.userlist {
+  margin-top: 30px;
+
+}
+.otherusers {
+  margin-left: 10px;
+}
+.itemlist {
+  margin-left: 10px;
 }

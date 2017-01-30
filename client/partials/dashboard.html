@@ -1,0 +1,41 @@
+<div class="container2">
+
+	<div class="title">
+	  <div class="row">
+	    <h3 class="col-xs-6 col-sm-4">Bucket Lists</h3>
+	    <h5 class="col-xs-6 col-sm-4" style="text-align: right;"><a class="logout" ng-click="logout()">Log out</a></h5>
+	  </div>
+	</div>
+
+	<h1>Welcome, <span class="user">{{user}}!</span></h1>
+
+	<form name="bucketAdder">
+		<input type="text" ng-model="item.title" ng-minlength='5' name="title" placeholder="Title" required>
+		<input type="text"  ng-model="item.description" ng-minlength='10' name="description" placeholder="Description" required>
+		<select ng-options="n.name for n in names" ng-model="item.friend"></select>
+		<div><span class="red" ng-show="myform.title.$error.minlength">Title must be at least 5 characters long</span></div>
+		<div><span class="red" ng-show="myform.description.$error.minlength">Description must be 10 characters long</span></div>
+		<br />
+		<button ng-disabled="bucketAdder.$invalid" ng-click='add()' class="btn btn-primary">ADD TO LIST</button>
+	</form>
+
+	<br>
+	<h3>Before I die I want to..</h3>
+
+	<div class="checkbox" ng-repeat="item in items">
+		<label>
+			<div ng-if="item.done == true">
+				<input type="checkbox" name="" ng-click="done(item._id)" checked>
+				{{item.friend}} | {{item.title}} - {{item.description}} - {{item.createdAt | date:"MMM dd yyyy"}}
+			</div>
+			<div ng-if="item.done != true">
+				<input type="checkbox" name="" ng-click="done(item._id)">
+					{{item.friend}} | {{item.title}} - {{item.description}} - {{item.createdAt | date:"MMM dd yyyy"}}
+			</div>
+		</label>
+	</div>
+
+	<div class="userlist">List of other users (Click to view their profile):</div>
+	<div ng-repeat="n in names"><a class="otherusers" href="#/view/{{n.name}}">{{n.name}}</a></div>
+
+</div>
