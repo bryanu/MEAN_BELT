@@ -40,18 +40,18 @@ function AptController() {
  				_userID:    req.body.userID
  		});
 
-    // Get appointments for today.
+    // Get appointments
     appt.find({'date' : req.body.date }).populate('_userID').exec(function(err, appt) {
       var error  = false;
       var errors = [];
-        for (users2 in appt) {
-          console.log("--> ", appt[users2]._userID._id)
-          if (req.body.userID == appt[users2]._userID._id) {
-            error = true;
-            errors.push({errors: { kind: 'date', message: 'You already have an appointment for this date.'}});
-            break;
-          }
+      for (users2 in appt) {
+        console.log("--> ", appt[users2]._userID._id)
+        if (req.body.userID == appt[users2]._userID._id) {
+          error = true;
+          errors.push({errors: { kind: 'date', message: 'You already have an appointment for this date.'}});
+          break;
         }
+      ]}
 
       // Are there already 3 or more appointments.
       if (appt.length >= 3) {
